@@ -22,7 +22,7 @@
 
 [arXivlink]: http://arxiv.org/abs/2605.21150
 
-## ROS2 Humble
+## ROS2 Humble and Jazzy
 
 ### Build
 
@@ -35,11 +35,17 @@ colcon build --packages-select ellipselio --cmake-args -DCMAKE_BUILD_TYPE=Releas
 source ~/colcon_ws/install/setup.bash
 ```
 
-### Run with a config file
+### Run standalone with a bag file
 
 ```sh
 ros2 launch ellipselio ellipselio_standalone.launch.py config_file:=<config_file_name>
-ros2 bag play <rosbag_file_name>
+ros2 bag play --clock <imu_rate> <bag_folder> --topics <lidar_topic> <imu_topic>
+```
+
+### Run standalone with live data
+
+```sh
+ros2 launch ellipselio ellipselio_standalone.launch.py config_file:=<config_file_name> use_sim_time:=false
 ```
 
 ## :pencil: Citation
