@@ -38,14 +38,10 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 ament_export_dependencies(rosidl_default_runtime)
 rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
-if(DEFINED rclcpp_VERSION)
-  if(rclcpp_VERSION VERSION_GREATER_EQUAL "2.0.0")
-    set(ROS_JAZZY ON CACHE BOOL "Auto-detected ROS Jazzy (rclcpp >= 2.0)")
-  else()
-    set(ROS_JAZZY OFF CACHE BOOL "Auto-detected ROS Jazzy (rclcpp < 2.0)")
-  endif()
+if(EXISTS "/opt/ros/jazzy")
+  set(ROS_JAZZY ON CACHE BOOL "Auto-detected ROS Jazzy (/opt/ros/jazzy exists)")
 else()
-  set(ROS_JAZZY OFF CACHE BOOL "Unable to detect rclcpp version; assuming not Jazzy")
+  set(ROS_JAZZY OFF CACHE BOOL "Auto-detected ROS not Jazzy (/opt/ros/jazzy not found)")
 endif()
 
 if(ROS_JAZZY)
