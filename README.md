@@ -68,6 +68,14 @@ ros2 bag play <bag_folder> --topics <lidar_topic> <imu_topic>
 | [`config/os64_geode.yaml`](config/os64_geode.yaml) | [`GEODE Beta`](https://thisparticle.github.io/geode/) |
 | [`config/vlp16_graco.yaml`](config/vlp16_graco.yaml) | [`GRACO`](https://github.com/SYSU-RoboticsLab/GrAco) |
 
+### Foxy RViz examples
+
+Example RViz outputs from the experimental Foxy path:
+
+| GEODE Alpha | Newer College |
+| --- | --- |
+| <img src="docs/assets/foxy_geode_alpha_bridge01.png" width="360" alt="GEODE Alpha RViz output on ROS 2 Foxy" /> | <img src="docs/assets/foxy_newer_college_os64_05.png" width="360" alt="Newer College RViz output on ROS 2 Foxy" /> |
+
 ### Run standalone with live data
 
 ```sh
